@@ -1,0 +1,23 @@
+{
+  "name": "ws-test-generator",
+  "version": "1.0.0",
+  "description": "Generates tests for WebSocket APIs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trialbyerror/ws-test-generator.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/trialbyerror/ws-test-generator/issues"
+  },
+  "homepage": "https://github.com/trialbyerror/ws-test-generator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
