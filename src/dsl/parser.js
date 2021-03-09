@@ -2,7 +2,7 @@ const {userInit, userInitSuccess, userInitFailure, chatMessage} = require("./moc
 
 // STUB class. Will take input params in future and validate.
 
-const parse = (arg) => { // TODO: arg: filename?
+const parse = (apiArr) => { 
     console.log("parsing input")
     return [userInit, userInitSuccess, userInitFailure, chatMessage];
 }
