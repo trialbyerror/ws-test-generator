@@ -60,6 +60,8 @@ const chatMessage = {
     }
 }
 
+console.log(JSON.stringify([userInit, userInitSuccess, userInitFailure, chatMessage]));
+
 // FUTURE EXTENSIONS:
 // strict-after: enforces order
 // enums, deeper object checks

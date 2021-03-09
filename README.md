@@ -15,3 +15,7 @@ Generates test classes for WebSocket APIs.
 1. `$ docker ps` 
 1. Copy CONTAINER ID value to clipboard
 1. `$ docker container stop <your container ID>`
+
+## View container output
+1. Complete steps 1 and 2 from **Stop the app**
+1. `$ docker attach <your container ID>`

@@ -1,0 +1,53 @@
+[{
+	"message": {
+		"name": "user-init",
+		"from": ["client"],
+		"required": true
+	},
+	"spec": {
+		"messageType": "user-init",
+		"userName": "<string>",
+		"userId": "<uuid>"
+	}
+}, {
+	"message": {
+		"name": "user-init-success",
+		"from": ["server"],
+		"after": ["user-init"],
+		"required": true
+	},
+	"spec": {
+		"messageType": "user-init-success",
+		"userName": "<string>",
+		"userId": "<uuid>",
+		"details": "<string>"
+	}
+}, {
+	"message": {
+		"name": "user-init-failure",
+		"from": ["server"],
+		"after": ["user-init"],
+		"required": true,
+		"unhappyPath": true
+	},
+	"spec": {
+		"messageType": "user-init-failure",
+		"userName": "<string>",
+		"userId": "<uuid>",
+		"details": "<string>"
+	}
+}, {
+	"message": {
+		"name": "chat-message",
+		"from": ["client", "server"],
+		"after": ["user-init", "user-init-success"],
+		"limit": 500
+	},
+	"spec": {
+		"messageType": "chat-message",
+		"timestamp": "<number>",
+		"userName": "<string>",
+		"userId": "<uuid>",
+		"text": "<string>"
+	}
+}]
