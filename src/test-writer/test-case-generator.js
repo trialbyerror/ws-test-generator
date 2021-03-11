@@ -2,7 +2,7 @@ const uuid = require("uuid");
 
 // generates test cases from graph
 
-const TEST_USER_ID = uuid();
+const TEST_USER_ID = uuid.v4();
 
 const testComponent = {
     send: { // property is either send or receive
@@ -33,11 +33,17 @@ const testCases = [
     singleTest, {
         name: "user-init user-init-failure",
         messages: [
-            testComponent, {
+            {
+                send: {
+                    messageType: "user-init",
+                    userName: "some-name",
+                    userId: 4
+                }
+            }, {
                 receive: {
                     messageType: "user-init-failure",
                     userName: "some-name",
-                    userId: TEST_USER_ID,
+                    userId: 4,
                     details: "some details"
                 }
             }, {
@@ -57,7 +63,7 @@ const testCases = [
             }, {
                 send: {
                     messageType: "chat-message",
-                    timestamp: 012345,
+                    timestamp: 12345,
                     userName: "some-name",
                     userId: TEST_USER_ID,
                     text: "Hello world"
@@ -65,7 +71,7 @@ const testCases = [
             }, {
                 receive: {
                     messageType: "chat-message",
-                    timestamp: 012345,
+                    timestamp: 12345,
                     userName: "some-name",
                     userId: TEST_USER_ID,
                     text: "Hello world"
